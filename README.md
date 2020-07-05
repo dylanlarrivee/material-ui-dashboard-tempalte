@@ -1,4 +1,10 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Material UI Dashboard Template
+
+## Purpose
+
+The project was created by combining features from various online resources as well as my own personal code to provide an application dashboard template for future builds.
+
+Please note that this project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
