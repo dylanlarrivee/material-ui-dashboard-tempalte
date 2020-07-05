@@ -18,7 +18,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
 
-import Campaigns from './campaigns-page/Campaigns';
+import DynamicContentGroups from './campaigns-page/DynamicContentGroups';
 
 const drawerWidth = 240;
 
@@ -156,9 +156,9 @@ export default function PersistentDrawerLeft() {
       >
         <div className={classes.drawerHeader} />
         <Typography paragraph>
-          Campaign Metrics
+          Dynamic Content Groups
         </Typography>
-        <Campaigns />
+        <DynamicContentGroups />
       </main>
     </div>
   );

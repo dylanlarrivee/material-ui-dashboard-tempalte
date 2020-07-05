@@ -8,6 +8,9 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import TablePagination from '@material-ui/core/TablePagination';
+import CloudUploadIcon from '@material-ui/icons/CloudUpload';
+import Button from '@material-ui/core/Button';
+
 
 const StyledTableCell = withStyles((theme) => ({
   head: {
@@ -27,16 +30,16 @@ const StyledTableRow = withStyles((theme) => ({
   },
 }))(TableRow);
 
-function createData(name, calories, fat, carbs, protein) {
-  return { name, calories, fat, carbs, protein };
+function createData(name, region, sent, other) {
+  return { name, region, sent, other };
 }
 
 const rows = [
-  createData('Campaign 1', 159, 6.0, 24, 4.0),
-  createData('Campaign 2', 237, 9.0, 37, 4.3),
-  createData('Campaign 3', 262, 16.0, 24, 6.0),
-  createData('Campaign 4', 305, 3.7, 67, 4.3),
-  createData('Campaign 5', 356, 16.0, 49, 3.9),
+  createData('Campaign 1', 'Camp1_Region', 2000, 24, 4.0),
+  createData('Campaign 2', 'Camp2_Region', 100, 37, 4.3),
+  createData('Campaign 3', 'Camp3_Region', 45000, 24, 6.0),
+  createData('Campaign 4', 'Camp4_Region', 20000, 67, 4.3),
+  createData('Campaign 5', 'Camp5_Region', 10, 49, 3.9),
 ];
 
 const useStyles = makeStyles({
@@ -77,10 +80,19 @@ const CustomizedTables = (props) => {
               <StyledTableCell component="th" scope="row">
                 {row.name}
               </StyledTableCell>
-              <StyledTableCell align="right">{row.calories}</StyledTableCell>
-              <StyledTableCell align="right">{row.fat}</StyledTableCell>
-              <StyledTableCell align="right">{row.carbs}</StyledTableCell>
-              <StyledTableCell align="right">{row.protein}</StyledTableCell>
+              <StyledTableCell align="right">{row.region}</StyledTableCell>
+              <StyledTableCell align="right">{row.sent}</StyledTableCell>
+              <StyledTableCell align="right">
+              <Button
+                    variant="contained"
+                    color="default"
+                    className={classes.button}
+                    startIcon={<CloudUploadIcon />}
+                >
+                    Export records
+                </Button>
+              </StyledTableCell>
+              <StyledTableCell align="right">{row.other}</StyledTableCell>
             </StyledTableRow>
           ))}
         </TableBody>
